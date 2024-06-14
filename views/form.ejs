@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>App</h1>
+      <form action="/add" method="post">
+        <input type="text" name="name" placeholder="Name" required />
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <% users.forEach((user) => { %>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= user.name %></h5>
+          <a href="/edit/<%= user._id %>" class="btn btn-primary">Edit</a>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </body>
+</html>
